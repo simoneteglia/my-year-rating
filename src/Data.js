@@ -1,3 +1,5 @@
+import global from "./global.json";
+
 const nomi = [
 	"Pier",
 	"Clara",
@@ -34,8 +36,10 @@ const voti = {
 	Gaia: [8, 9],
 };
 
-const borderWidth = 3;
+const borderWidth = 2;
+const mobileBorderWidth = 1;
 const numeroAnni = 2;
+const slicePoint = 7;
 
 export default class Data {
 	constructor() {}
@@ -64,12 +68,15 @@ export default class Data {
 		return dataObject;
 	}
 
-	getRadarDataComplete() {
+	getRadarDataComplete(windowSize) {
 		let myDatasets = [];
 		for (let i = 0; i < numeroAnni; i++) {
 			myDatasets.push({
 				label: `Voto ${2021 + i}`,
-				borderWidth: borderWidth,
+				borderWidth:
+					windowSize > global.UTILS.MOBILE_WIDTH
+						? borderWidth
+						: mobileBorderWidth,
 				data: this.getVotiAnno(2021 + i),
 			});
 		}
@@ -79,18 +86,54 @@ export default class Data {
 		};
 	}
 
-	getBarDataComplete() {
+	getBarDataComplete(windowSize) {
 		let myDatasets = [];
 		for (let i = 0; i < numeroAnni; i++) {
 			myDatasets.push({
 				label: `Voto ${2021 + i}`,
-				borderWidth: borderWidth,
+				borderWidth:
+					windowSize > global.UTILS.MOBILE_WIDTH
+						? borderWidth
+						: mobileBorderWidth,
 				data: this.getVotiAnno(2021 + i),
 			});
 		}
 		return {
 			labels: nomi,
 			datasets: myDatasets,
+		};
+	}
+
+	getBarDataCompleteMobile1() {
+		let myDatasets1 = [];
+		for (let i = 0; i < numeroAnni; i++) {
+			myDatasets1.push({
+				label: `Voto ${2021 + i}`,
+				borderWidth: mobileBorderWidth,
+				data: this.getVotiAnno(2021 + i).slice(0, slicePoint),
+			});
+		}
+		return {
+			labels: nomi.slice(0, slicePoint),
+			datasets: myDatasets1,
+		};
+	}
+
+	getBarDataCompleteMobile2() {
+		let myDatasets1 = [];
+		for (let i = 0; i < numeroAnni; i++) {
+			myDatasets1.push({
+				label: `Voto ${2021 + i}`,
+				borderWidth: mobileBorderWidth,
+				data: this.getVotiAnno(2021 + i).slice(
+					slicePoint,
+					nomi.length - 1
+				),
+			});
+		}
+		return {
+			labels: nomi.slice(slicePoint, nomi.length - 1),
+			datasets: myDatasets1,
 		};
 	}
 
@@ -107,22 +150,6 @@ export default class Data {
 		return {
 			labels: [2021, 2022],
 			datasets: myDatasets,
-		};
-	}
-
-	getScatterDataComplete() {
-		let myDatasets = [];
-		let values = this.getVotiAnno(2021);
-		console.log(values);
-		return {
-			labels: ["Pier"],
-			datasets: [
-				{
-					label: "Voto 2021",
-					borderWidth: borderWidth,
-					data: values,
-				},
-			],
 		};
 	}
 }
