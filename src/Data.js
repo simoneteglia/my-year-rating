@@ -125,14 +125,11 @@ export default class Data {
 			myDatasets1.push({
 				label: `Voto ${2021 + i}`,
 				borderWidth: mobileBorderWidth,
-				data: this.getVotiAnno(2021 + i).slice(
-					slicePoint,
-					nomi.length - 1
-				),
+				data: this.getVotiAnno(2021 + i).slice(slicePoint, nomi.length),
 			});
 		}
 		return {
-			labels: nomi.slice(slicePoint, nomi.length - 1),
+			labels: nomi.slice(slicePoint, nomi.length),
 			datasets: myDatasets1,
 		};
 	}
@@ -147,6 +144,53 @@ export default class Data {
 				data: voti[persona],
 			});
 		}
+		return {
+			labels: [2021, 2022],
+			datasets: myDatasets,
+		};
+	}
+
+	getMedia() {
+		let myDatasets = [];
+		let voti_anno = this.getVotiAnno(2021);
+		let voti_anno_next = this.getVotiAnno(2022);
+		let sum = voti_anno.reduce((a, b) => a + b);
+		const avg = sum / nomi.length;
+		let sum_next = voti_anno_next.reduce((a, b) => a + b);
+		const avg_next = sum_next / nomi.length;
+		myDatasets.push({
+			label: `Media`,
+			borderWidth: borderWidth,
+			data: [Math.round(avg), Math.round(avg_next)],
+		});
+		return {
+			labels: [2021, 2022],
+			datasets: myDatasets,
+		};
+	}
+
+	getModa() {
+		let values = [];
+		let myDatasets = [];
+		for (let j = 0; j < numeroAnni; j++) {
+			let voti_anno = this.getVotiAnno(2021 + j);
+			let counts = {};
+			for (let k = 0; k < voti_anno.length; k++) {
+				const elem = voti_anno[k];
+				if (counts[elem]) counts[elem] += 1;
+				else counts[elem] = 1;
+			}
+			values.push(
+				Object.keys(counts).reduce((a, b) =>
+					counts[a] > counts[b] ? a : b
+				)
+			);
+		}
+		myDatasets.push({
+			label: "Moda",
+			borderWidth: borderWidth,
+			data: values,
+		});
 		return {
 			labels: [2021, 2022],
 			datasets: myDatasets,

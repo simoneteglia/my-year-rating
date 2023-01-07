@@ -83,6 +83,18 @@ function App() {
 						data={data.getBarDataComplete(windowSize)}
 					/>
 					<Line data={data.getLineDataComplete()} />
+					<Line
+						data={data.getMedia()}
+						options={{
+							scales: { y: { suggestedMin: 4, suggestedMax: 9 } },
+						}}
+					/>
+					<Line
+						data={data.getModa()}
+						options={{
+							scales: { y: { suggestedMin: 4, suggestedMax: 9 } },
+						}}
+					/>
 				</section>
 			</div>
 		);
@@ -131,6 +143,18 @@ function App() {
 					<Bar data={data.getBarDataCompleteMobile1()} />
 					<Bar data={data.getBarDataCompleteMobile2()} />
 					<Line data={data.getLineDataComplete()} />
+					<Line
+						data={data.getMedia()}
+						options={{
+							scales: { y: { suggestedMin: 4, suggestedMax: 9 } },
+						}}
+					/>
+					<Line
+						data={data.getModa()}
+						options={{
+							scales: { y: { suggestedMin: 4, suggestedMax: 9 } },
+						}}
+					/>
 				</section>
 			</div>
 		);
