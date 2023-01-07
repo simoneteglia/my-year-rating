@@ -44,6 +44,10 @@ const slicePoint = 7;
 export default class Data {
 	constructor() {}
 
+	getNomi() {
+		return nomi;
+	}
+
 	getVotiAnno(anno) {
 		let values = [];
 		for (const persona in voti) {
