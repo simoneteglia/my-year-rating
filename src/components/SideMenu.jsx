@@ -2,7 +2,12 @@ import { faUser, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 
-export default function SideMenu({ setIsMenuOpen, isMenuOpen, nomi }) {
+export default function SideMenu({
+	setIsMenuOpen,
+	isMenuOpen,
+	nomi,
+	setPersonSelected,
+}) {
 	useEffect(() => {}, []);
 	return (
 		<div
@@ -55,11 +60,12 @@ export default function SideMenu({ setIsMenuOpen, isMenuOpen, nomi }) {
 					paddingTop: "30px",
 				}}
 			>
-				{[...nomi].map((nome, i) => {
+				{[...nomi, "GA"].map((nome, i) => {
 					return (
 						<div
 							onClick={() => {
 								setIsMenuOpen(false);
+								setPersonSelected(nome);
 								console.log(nome);
 							}}
 							key={i}
