@@ -31,7 +31,8 @@ function App() {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
 	useEffect(() => {
-		document.body.style.overflowY = isMenuOpen ? "hidden" : "initial";
+		document.body.style.position = isMenuOpen ? "fixed" : "initial";
+		document.body.style.width = isMenuOpen ? "100%" : "initial";
 	}, [isMenuOpen]);
 
 	useEffect(() => {

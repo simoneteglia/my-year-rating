@@ -41,6 +41,7 @@ export default function SideMenu({ setIsMenuOpen, isMenuOpen, nomi }) {
 
 			<section
 				style={{
+					height: "-webkit-fill-available",
 					display: "grid",
 					gridTemplateColumns: "25% 25% 25% 25%",
 					placeItems: "center",
