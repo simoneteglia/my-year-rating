@@ -31,6 +31,10 @@ function App() {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
 	useEffect(() => {
+		document.body.style.overflowY = isMenuOpen ? "hidden" : "initial";
+	}, [isMenuOpen]);
+
+	useEffect(() => {
 		window.addEventListener("resize", handleResize);
 	}, []);
 
