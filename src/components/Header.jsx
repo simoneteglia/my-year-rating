@@ -27,6 +27,8 @@ export default function Header({ setIsMenuOpen }) {
 					paddingLeft: "50px",
 					position: "absolute",
 					right: "20px",
+					padding: "20px",
+					cursor: "pointer",
 				}}
 				icon={faUsers}
 				size="xl"

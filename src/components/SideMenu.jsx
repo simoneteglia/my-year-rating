@@ -17,7 +17,7 @@ export default function SideMenu({ setIsMenuOpen, isMenuOpen, nomi }) {
 				backgroundColor: "white",
 				position: "fixed",
 				top: 0,
-				right: isMenuOpen ? 0 : -400,
+				right: isMenuOpen ? 0 : "-100%",
 				transition: "all 0.5s ease",
 			}}
 		>
@@ -34,7 +34,12 @@ export default function SideMenu({ setIsMenuOpen, isMenuOpen, nomi }) {
 				<FontAwesomeIcon
 					icon={faXmark}
 					size="xl"
-					style={{ position: "absolute", right: 20 }}
+					style={{
+						position: "absolute",
+						right: 20,
+						padding: "20px",
+						cursor: "pointer",
+					}}
 					onClick={() => setIsMenuOpen(false)}
 				/>
 			</div>
@@ -62,6 +67,7 @@ export default function SideMenu({ setIsMenuOpen, isMenuOpen, nomi }) {
 								display: "flex",
 								flexDirection: "column",
 								alignItems: "center",
+								cursor: "pointer",
 							}}
 						>
 							<FontAwesomeIcon icon={faUser} size="xl" />
