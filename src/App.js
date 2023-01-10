@@ -15,6 +15,7 @@ import {
 	Filler,
 } from "chart.js";
 import Header from "./components/Header";
+import SideMenu from "./components/SideMenu";
 
 Chart.register(
 	CategoryScale,
@@ -27,6 +28,7 @@ Chart.register(
 
 function App() {
 	const [windowSize, setWindowSize] = useState(window.innerWidth);
+	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
 	useEffect(() => {
 		window.addEventListener("resize", handleResize);
@@ -107,7 +109,7 @@ function App() {
 		 */
 		return (
 			<>
-				<Header />
+				<Header setIsMenuOpen={setIsMenuOpen} />
 				<div
 					style={{
 						display: "flex",
@@ -163,6 +165,11 @@ function App() {
 						/>
 					</section>
 				</div>
+				<SideMenu
+					setIsMenuOpen={setIsMenuOpen}
+					isMenuOpen={isMenuOpen}
+					nomi={data.getNomi()}
+				/>
 			</>
 		);
 	}
