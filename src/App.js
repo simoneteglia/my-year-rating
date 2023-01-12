@@ -19,6 +19,9 @@ import SideMenu from "./components/SideMenu";
 import PlotsGroup from "./components/PlotsGroup";
 import PlotsSingle from "./components/PlotsSingle";
 
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import Navbar from "./components/Navbar";
+
 Chart.register(
 	CategoryScale,
 	LinearScale,
@@ -28,10 +31,9 @@ Chart.register(
 	Filler
 );
 
-function App() {
+export default function App() {
 	const [windowSize, setWindowSize] = useState(window.innerWidth);
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
-	const [personSelected, setPersonSelected] = useState("GA");
 
 	useEffect(() => {
 		document.body.style.position = isMenuOpen ? "fixed" : "initial";
@@ -48,30 +50,43 @@ function App() {
 
 	const data = new Data();
 
-	return (
-		<>
-			<Header setIsMenuOpen={setIsMenuOpen} />
-			<div
-				style={{
-					display: "flex",
-					alignItems: "center",
-					flexDirection: "column",
-				}}
-			>
-				{personSelected === "GA" ? (
-					<PlotsGroup windowSize={windowSize} data={data} />
-				) : (
-					<PlotsSingle personSelected={personSelected} />
-				)}
-			</div>
-			<SideMenu
-				setIsMenuOpen={setIsMenuOpen}
-				isMenuOpen={isMenuOpen}
-				nomi={data.getNomi()}
-				setPersonSelected={setPersonSelected}
-			/>
-		</>
-	);
-}
+	const router = createBrowserRouter([
+		{
+			path: "/",
+			element: (
+				<div
+					style={{
+						display: "grid",
+						gridTemplateColumns: "20% 80%",
+						width: "100vw",
+					}}
+				>
+					<Navbar windowSize={windowSize} nomi={data.getNomi()} />
+					<Outlet />
+				</div>
+			),
+			children: [
+				{
+					path: "/",
+					element: (
+						<div
+							style={{
+								display: "flex",
+								alignItems: "center",
+								flexDirection: "column",
+							}}
+						>
+							<PlotsGroup windowSize={windowSize} data={data} />
+						</div>
+					),
+				},
+				{
+					path: "/:persona",
+					element: <PlotsSingle />,
+				},
+			],
+		},
+	]);
 
-export default App;
+	return <RouterProvider router={router} />;
+}
