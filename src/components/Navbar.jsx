@@ -1,4 +1,4 @@
-import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { faHome, faUser, faUsers } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
@@ -64,15 +64,45 @@ export default function Navbar({ windowSize, nomi }) {
 		return (
 			<div
 				style={{
-					height: "10vh",
+					height: "8vh",
 					width: "100vw",
-					backgroundColor: "red",
+					backgroundColor: "white",
 					position: "fixed",
 					bottom: 0,
 					left: 0,
+					display: "grid",
+					gridTemplateColumns: "50% 50%",
+					borderTop: `2px solid ${global.COLORS.LIGHT_BLUE}`,
+					transition: "all 0.3s ease",
 				}}
 			>
-				<h1>TEST</h1>
+				<div
+					style={{
+						display: "grid",
+						placeItems: "center",
+						borderRight: `1px solid ${global.COLORS.LIGHT_BLUE}`,
+					}}
+				>
+					<FontAwesomeIcon
+						icon={faHome}
+						size="xl"
+						style={{ color: global.COLORS.LIGHT_BLUE }}
+					/>
+				</div>
+
+				<div
+					style={{
+						display: "grid",
+						placeItems: "center",
+						borderLeft: `1px solid ${global.COLORS.LIGHT_BLUE}`,
+					}}
+				>
+					<FontAwesomeIcon
+						icon={faUsers}
+						size="xl"
+						style={{ color: global.COLORS.LIGHT_BLUE }}
+					/>
+				</div>
 			</div>
 		);
 	}

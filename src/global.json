@@ -3,6 +3,7 @@
 		"MOBILE_WIDTH": 768
 	},
 	"COLORS": {
-		"LIGHT_BLUE": "#A7C7E7"
+		"LIGHT_RED": "rgba(255, 99, 132, 0.6)",
+		"LIGHT_BLUE": "rgba(54, 162, 235, 0.6)"
 	}
 }
