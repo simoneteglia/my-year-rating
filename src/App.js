@@ -56,8 +56,6 @@ export default function App() {
 			element: (
 				<div
 					style={{
-						display: "grid",
-						gridTemplateColumns: "20% 80%",
 						width: "100vw",
 					}}
 				>
@@ -82,7 +80,7 @@ export default function App() {
 				},
 				{
 					path: "/:persona",
-					element: <PlotsSingle />,
+					element: <PlotsSingle data={data} />,
 				},
 			],
 		},

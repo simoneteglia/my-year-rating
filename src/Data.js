@@ -200,4 +200,30 @@ export default class Data {
 			datasets: myDatasets,
 		};
 	}
+
+	/**
+	 * SINGLE PLOTS
+	 */
+
+	getBarDataSingle(persona) {
+		let myDatasets = [];
+		let votiPersona = [];
+		for (const pers in voti) {
+			if (pers === persona) {
+				votiPersona = voti[pers];
+			}
+		}
+		let i = 0;
+		for (let voto in votiPersona) {
+			myDatasets.push({
+				label: `Voto ${2021 + i++}`,
+				borderWidth: borderWidth,
+				data: [votiPersona[voto]],
+			});
+		}
+		return {
+			labels: [2021, 2022],
+			datasets: myDatasets,
+		};
+	}
 }

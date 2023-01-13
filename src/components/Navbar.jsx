@@ -1,3 +1,5 @@
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import global from "../global.json";
@@ -10,34 +12,46 @@ export default function Navbar({ windowSize, nomi }) {
 		return (
 			<div
 				style={{
-					height: "100%",
+					height: "100vh",
+					overflow: "scroll",
 					backgroundColor: global.COLORS.LIGHT_BLUE,
-					display: "flex",
-					flexDirection: "column",
-					paddingLeft: "20px",
+					width: "20%",
+					position: "fixed",
+					top: 0,
+					left: 0,
 				}}
 			>
-				<h1>M Y R</h1>
+				<h1 style={{ paddingLeft: "20px" }}>M Y R</h1>
 				<section
 					style={{
-						display: "flex",
-						flexDirection: "column",
 						height: "700px",
-						justifyContent: "space-around",
 					}}
 				>
 					{["GA", ...nomi].map((nome, i) => {
 						return (
-							<Link
+							<div
+								key={i}
 								style={{
-									textDecoration: "none",
-									color: "black",
-									fontSize: "20px",
+									height: "42px",
+									width: "100%",
+									display: "flex",
+									alignItems: "center",
+									paddingLeft: "20px",
 								}}
-								to={nome === "GA" ? "/" : `${nome}`}
 							>
-								{nome}
-							</Link>
+								<FontAwesomeIcon icon={faUser} />
+								<Link
+									style={{
+										textDecoration: "none",
+										color: "black",
+										fontSize: "19px",
+										paddingLeft: "10px",
+									}}
+									to={nome === "GA" ? "/" : `${nome}`}
+								>
+									{nome}
+								</Link>
+							</div>
 						);
 					})}
 				</section>

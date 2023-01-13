@@ -16,13 +16,15 @@ export default function PlotsGroup({ windowSize, data }) {
 		return (
 			<section
 				style={{
-					width: "90%",
+					width: "70%",
+					marginLeft: "20%",
 					display: "flex",
 					justifyContent: "center",
 					alignItems: "center",
 					flexDirection: "column",
 					gap: "50px",
 					paddingBottom: "100px",
+					marginTop: "40px",
 				}}
 			>
 				<Radar
@@ -70,12 +72,13 @@ export default function PlotsGroup({ windowSize, data }) {
 		return (
 			<section
 				style={{
-					width: "90%",
+					width: "80%",
 					display: "flex",
 					justifyContent: "center",
 					alignItems: "center",
 					flexDirection: "column",
 					gap: "50px",
+					paddingTop: "50px",
 					paddingBottom: "100px",
 				}}
 			>
