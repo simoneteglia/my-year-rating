@@ -15,7 +15,7 @@ import {
 	Filler,
 } from "chart.js";
 import Header from "./components/Header";
-import SideMenu from "./components/SideMenu";
+import SelectionPage from "./components/SelectionPage";
 import PlotsGroup from "./components/PlotsGroup";
 import PlotsSingle from "./components/PlotsSingle";
 
@@ -80,7 +80,13 @@ export default function App() {
 				},
 				{
 					path: "/:persona",
-					element: <PlotsSingle data={data} />,
+					element: (
+						<PlotsSingle data={data} windowSize={windowSize} />
+					),
+				},
+				{
+					path: "/selection",
+					element: <SelectionPage nomi={data.getNomi()} />,
 				},
 			],
 		},

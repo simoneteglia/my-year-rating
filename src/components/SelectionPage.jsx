@@ -1,14 +1,9 @@
 import { faUser, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
-export default function SideMenu({
-	setIsMenuOpen,
-	isMenuOpen,
-	nomi,
-	setPersonSelected,
-}) {
-	useEffect(() => {}, []);
+export default function SelectionPage({ nomi }) {
 	return (
 		<div
 			style={{
@@ -20,9 +15,6 @@ export default function SideMenu({
 				height: "-webkit-fill-available",
 				maxHeight: "100vh",
 				backgroundColor: "white",
-				position: "fixed",
-				top: 0,
-				right: isMenuOpen ? 0 : "-100%",
 				transition: "all 0.5s ease",
 			}}
 		>
@@ -36,19 +28,7 @@ export default function SideMenu({
 				}}
 			>
 				<h1>Filtra i risultati</h1>
-				<FontAwesomeIcon
-					icon={faXmark}
-					size="xl"
-					style={{
-						position: "absolute",
-						right: 20,
-						padding: "20px",
-						cursor: "pointer",
-					}}
-					onClick={() => setIsMenuOpen(false)}
-				/>
 			</div>
-
 			<section
 				style={{
 					height: "-webkit-fill-available",
@@ -60,23 +40,24 @@ export default function SideMenu({
 					paddingTop: "30px",
 				}}
 			>
-				{[...nomi, "GA"].map((nome, i) => {
+				{[...nomi].map((nome, i) => {
 					return (
-						<div
-							onClick={() => {
-								setIsMenuOpen(false);
-								setPersonSelected(nome);
-								console.log(nome);
-							}}
+						<Link
+							to={`/${nome}`}
 							key={i}
 							style={{
 								display: "flex",
 								flexDirection: "column",
 								alignItems: "center",
 								cursor: "pointer",
+								textDecoration: "none",
 							}}
 						>
-							<FontAwesomeIcon icon={faUser} size="xl" />
+							<FontAwesomeIcon
+								icon={faUser}
+								size="xl"
+								style={{ color: "black" }}
+							/>
 							<p
 								style={{
 									color: "black",
@@ -85,7 +66,7 @@ export default function SideMenu({
 							>
 								{nome}
 							</p>
-						</div>
+						</Link>
 					);
 				})}
 			</section>

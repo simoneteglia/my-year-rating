@@ -72,16 +72,17 @@ export default function PlotsGroup({ windowSize, data }) {
 		return (
 			<section
 				style={{
-					width: "80%",
+					width: "90%",
 					display: "flex",
-					justifyContent: "center",
 					alignItems: "center",
 					flexDirection: "column",
 					gap: "50px",
-					paddingTop: "50px",
 					paddingBottom: "100px",
 				}}
 			>
+				<h1 style={{ marginBottom: "-20px", textAlign: "center" }}>
+					COME E' ANDATO L'ANNO?
+				</h1>
 				<Radar
 					data={data.getRadarDataComplete(windowSize)}
 					options={{

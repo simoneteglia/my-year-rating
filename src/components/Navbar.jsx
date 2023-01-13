@@ -83,11 +83,13 @@ export default function Navbar({ windowSize, nomi }) {
 						borderRight: `1px solid ${global.COLORS.LIGHT_BLUE}`,
 					}}
 				>
-					<FontAwesomeIcon
-						icon={faHome}
-						size="xl"
-						style={{ color: global.COLORS.LIGHT_BLUE }}
-					/>
+					<Link to="/">
+						<FontAwesomeIcon
+							icon={faHome}
+							size="xl"
+							style={{ color: global.COLORS.LIGHT_BLUE }}
+						/>
+					</Link>
 				</div>
 
 				<div
@@ -97,11 +99,13 @@ export default function Navbar({ windowSize, nomi }) {
 						borderLeft: `1px solid ${global.COLORS.LIGHT_BLUE}`,
 					}}
 				>
-					<FontAwesomeIcon
-						icon={faUsers}
-						size="xl"
-						style={{ color: global.COLORS.LIGHT_BLUE }}
-					/>
+					<Link to="selection">
+						<FontAwesomeIcon
+							icon={faUsers}
+							size="xl"
+							style={{ color: global.COLORS.LIGHT_BLUE }}
+						/>
+					</Link>
 				</div>
 			</div>
 		);

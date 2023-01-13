@@ -1,28 +1,54 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Bar, Line, Radar, Scatter } from "react-chartjs-2";
+import global from "../global.json";
 
-export default function PlotsSingle({ data }) {
+export default function PlotsSingle({ data, windowSize }) {
 	const { persona } = useParams();
 
-	useEffect(() => {
-		console.log(data.getBarDataSingle(persona));
-	}, [persona]);
-
 	if (persona)
-		return (
-			<div style={{ width: "70%", marginLeft: "25%" }}>
-				<h1>Gli anni di {persona}</h1>
-				<Bar
-					style={{ maxHeight: "500px" }}
-					data={data.getBarDataSingle(persona)}
-					options={{
-						indexAxis: "y",
-						scales: {
-							x: { suggestedMin: 0, suggestedMax: 10 },
-						},
+		if (windowSize > global.UTILS.MOBILE_WIDTH) {
+			/**
+			 * DESKTOP
+			 */
+			return (
+				<div style={{ width: "70%", marginLeft: "25%" }}>
+					<h1>Gli anni di {persona}</h1>
+					<Bar
+						style={{ maxHeight: "500px" }}
+						data={data.getBarDataSingle(persona)}
+						options={{
+							indexAxis: "y",
+							scales: {
+								x: { suggestedMin: 0, suggestedMax: 10 },
+							},
+						}}
+					/>
+				</div>
+			);
+		} else {
+			/**
+			 * MOBILE
+			 */
+			return (
+				<div
+					style={{
+						width: "95%",
+						margin: "auto",
 					}}
-				/>
-			</div>
-		);
+				>
+					<h1>Gli anni di {persona}</h1>
+					<Bar
+						style={{ maxHeight: "500px" }}
+						data={data.getBarDataSingle(persona)}
+						options={{
+							indexAxis: "y",
+							scales: {
+								x: { suggestedMin: 0, suggestedMax: 10 },
+							},
+						}}
+					/>
+				</div>
+			);
+		}
 }

@@ -58,7 +58,6 @@ export default class Data {
 
 	getRadarData(anno) {
 		let values = this.getVotiAnno(anno);
-		console.log(values);
 		const dataObject = {
 			labels: nomi,
 			datasets: [
