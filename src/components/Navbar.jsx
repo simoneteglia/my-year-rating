@@ -57,5 +57,23 @@ export default function Navbar({ windowSize, nomi }) {
 				</section>
 			</div>
 		);
+	} else {
+		/*
+		 * MOBILE
+		 */
+		return (
+			<div
+				style={{
+					height: "10vh",
+					width: "100vw",
+					backgroundColor: "red",
+					position: "fixed",
+					bottom: 0,
+					left: 0,
+				}}
+			>
+				<h1>TEST</h1>
+			</div>
+		);
 	}
 }
