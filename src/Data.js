@@ -223,7 +223,21 @@ export default class Data {
 		}
 		return {
 			labels: [2021, 2022],
-			datasets: myDatasets,
+			datasets: [
+				{
+					label: "Voto",
+					borderWidth: borderWidth,
+					data: votiPersona,
+					backgroundColor: [
+						"rgba(255, 99, 132, 0.6)",
+						"rgba(54, 162, 235, 0.6)",
+					],
+					borderColor: [
+						"rgba(255, 99, 132, 1)",
+						"rgba(54, 162, 235, 1)",
+					],
+				},
+			],
 		};
 	}
 }
