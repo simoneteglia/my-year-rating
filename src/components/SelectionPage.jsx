@@ -25,9 +25,10 @@ export default function SelectionPage({ nomi }) {
 					justifyContent: "center",
 					alignItems: "center",
 					position: "relative",
+					textTransform: "uppercase",
 				}}
 			>
-				<h1>Filtra i risultati</h1>
+				<h2>Filtra i risultati</h2>
 			</div>
 			<section
 				style={{
