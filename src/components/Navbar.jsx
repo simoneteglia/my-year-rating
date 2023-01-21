@@ -76,37 +76,35 @@ export default function Navbar({ windowSize, nomi }) {
 					transition: "all 0.3s ease",
 				}}
 			>
-				<div
+				<Link
+					to="/"
 					style={{
 						display: "grid",
 						placeItems: "center",
 						borderRight: `1px solid ${global.COLORS.NAVBAR_COLOR}`,
 					}}
 				>
-					<Link to="/">
-						<FontAwesomeIcon
-							icon={faHome}
-							size="xl"
-							style={{ color: global.COLORS.NAVBAR_COLOR }}
-						/>
-					</Link>
-				</div>
+					<FontAwesomeIcon
+						icon={faHome}
+						size="xl"
+						style={{ color: global.COLORS.NAVBAR_COLOR }}
+					/>
+				</Link>
 
-				<div
+				<Link
+					to="/selection"
 					style={{
 						display: "grid",
 						placeItems: "center",
 						borderLeft: `1px solid ${global.COLORS.NAVBAR_COLOR}`,
 					}}
 				>
-					<Link to="selection">
-						<FontAwesomeIcon
-							icon={faUsers}
-							size="xl"
-							style={{ color: global.COLORS.NAVBAR_COLOR }}
-						/>
-					</Link>
-				</div>
+					<FontAwesomeIcon
+						icon={faUsers}
+						size="xl"
+						style={{ color: global.COLORS.NAVBAR_COLOR }}
+					/>
+				</Link>
 			</div>
 		);
 	}
