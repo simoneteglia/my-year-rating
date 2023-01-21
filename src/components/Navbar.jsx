@@ -64,7 +64,7 @@ export default function Navbar({ windowSize, nomi }) {
 		return (
 			<div
 				style={{
-					height: "8vh",
+					height: "9vh",
 					width: "100vw",
 					backgroundColor: "white",
 					position: "fixed",
@@ -72,7 +72,7 @@ export default function Navbar({ windowSize, nomi }) {
 					left: 0,
 					display: "grid",
 					gridTemplateColumns: "50% 50%",
-					borderTop: `2px solid ${global.COLORS.LIGHT_BLUE}`,
+					borderTop: `2px solid ${global.COLORS.NAVBAR_COLOR}`,
 					transition: "all 0.3s ease",
 				}}
 			>
@@ -80,14 +80,14 @@ export default function Navbar({ windowSize, nomi }) {
 					style={{
 						display: "grid",
 						placeItems: "center",
-						borderRight: `1px solid ${global.COLORS.LIGHT_BLUE}`,
+						borderRight: `1px solid ${global.COLORS.NAVBAR_COLOR}`,
 					}}
 				>
 					<Link to="/">
 						<FontAwesomeIcon
 							icon={faHome}
 							size="xl"
-							style={{ color: global.COLORS.LIGHT_BLUE }}
+							style={{ color: global.COLORS.NAVBAR_COLOR }}
 						/>
 					</Link>
 				</div>
@@ -96,14 +96,14 @@ export default function Navbar({ windowSize, nomi }) {
 					style={{
 						display: "grid",
 						placeItems: "center",
-						borderLeft: `1px solid ${global.COLORS.LIGHT_BLUE}`,
+						borderLeft: `1px solid ${global.COLORS.NAVBAR_COLOR}`,
 					}}
 				>
 					<Link to="selection">
 						<FontAwesomeIcon
 							icon={faUsers}
 							size="xl"
-							style={{ color: global.COLORS.LIGHT_BLUE }}
+							style={{ color: global.COLORS.NAVBAR_COLOR }}
 						/>
 					</Link>
 				</div>

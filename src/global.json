@@ -4,6 +4,7 @@
 	},
 	"COLORS": {
 		"LIGHT_RED": "rgba(255, 99, 132, 0.6)",
-		"LIGHT_BLUE": "rgba(54, 162, 235, 0.6)"
+		"LIGHT_BLUE": "rgba(54, 162, 235, 0.6)",
+		"NAVBAR_COLOR": "black"
 	}
 }

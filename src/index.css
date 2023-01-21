@@ -15,3 +15,12 @@ code {
 html {
 	height: -webkit-fill-available;
 }
+
+@font-face {
+	font-family: GothamBold;
+	src: url("./resources/Gotham-Bold.otf");
+}
+
+* {
+	font-family: GothamBold;
+}
