@@ -24,3 +24,7 @@ html {
 * {
 	font-family: GothamBold;
 }
+
+.profile-image {
+	clip-path: ellipse(43% 45% at 50% 50%);
+}

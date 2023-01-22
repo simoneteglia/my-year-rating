@@ -54,11 +54,11 @@ export default function SelectionPage({ nomi }) {
 								textDecoration: "none",
 							}}
 						>
-							<FontAwesomeIcon
-								icon={faUser}
-								size="xl"
-								style={{ color: "black" }}
-							/>
+							<img
+								className="profile-image"
+								src={`/images/${nome}.jpeg`}
+								style={{ maxWidth: "50px", maxHeight: "60px" }}
+							></img>
 							<p
 								style={{
 									color: "black",
