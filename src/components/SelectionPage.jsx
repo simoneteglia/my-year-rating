@@ -3,6 +3,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
+const clarkePhoto = "/images/clarke.jpeg";
+const simoPhoto = "/images/simo.jpeg";
+
 export default function SelectionPage({ nomi }) {
 	return (
 		<div
@@ -56,7 +59,7 @@ export default function SelectionPage({ nomi }) {
 						>
 							<img
 								className="profile-image"
-								src={`/static/images/${nome}.jpeg`}
+								src={simoPhoto}
 								style={{ maxWidth: "50px", maxHeight: "60px" }}
 							></img>
 							<p
