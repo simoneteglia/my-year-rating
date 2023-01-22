@@ -59,7 +59,7 @@ export default function SelectionPage({ nomi }) {
 						>
 							<img
 								className="profile-image"
-								src={simoPhoto}
+								src={getPhoto(nome)}
 								style={{ maxWidth: "50px", maxHeight: "60px" }}
 							></img>
 							<p
@@ -76,4 +76,19 @@ export default function SelectionPage({ nomi }) {
 			</section>
 		</div>
 	);
+}
+
+function getPhoto(nome) {
+	console.log(nome);
+	switch (nome) {
+		case "Simo":
+			return simoPhoto;
+			break;
+		case "Clarke":
+			return clarkePhoto;
+			break;
+		default:
+			return simoPhoto;
+			break;
+	}
 }
