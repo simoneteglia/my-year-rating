@@ -56,7 +56,7 @@ export default function SelectionPage({ nomi }) {
 						>
 							<img
 								className="profile-image"
-								src={`/images/${nome}.jpeg`}
+								src={`/static/images/${nome}.jpeg`}
 								style={{ maxWidth: "50px", maxHeight: "60px" }}
 							></img>
 							<p
