@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 
 const clarkePhoto = "/images/clarke.jpeg";
 const simoPhoto = "/images/simo.jpeg";
+const duduPhoto = "/images/dudu.jpeg";
+const jacopoPhoto = "/images/jacopo.jpeg";
 
 export default function SelectionPage({ nomi }) {
 	return (
@@ -83,12 +85,13 @@ function getPhoto(nome) {
 	switch (nome) {
 		case "Simo":
 			return simoPhoto;
-			break;
 		case "Clarke":
 			return clarkePhoto;
-			break;
+		case "Dudu":
+			return duduPhoto;
+		case "Jacopo":
+			return jacopoPhoto;
 		default:
 			return simoPhoto;
-			break;
 	}
 }
