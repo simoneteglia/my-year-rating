@@ -37,6 +37,7 @@ export default function Navbar({ windowSize, nomi }) {
 					position: "fixed",
 					top: 0,
 					left: 0,
+					overflowX: "hidden",
 				}}
 			>
 				<h1 style={{ paddingLeft: "20px" }}>My Year Rating</h1>
