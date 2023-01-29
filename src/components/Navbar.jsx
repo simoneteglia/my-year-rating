@@ -20,6 +20,7 @@ const sofiaPhoto = "/images/sofia.jpg";
 const alessioPhoto = "/images/alessio.jpg";
 const mattePhoto = "/images/matte.jpg";
 const valeriaPhoto = "/images/valeria.jpg";
+const GAPhoto = "/images/GA.jpeg";
 
 export default function Navbar({ windowSize, nomi }) {
 	if (windowSize > global.UTILS.MOBILE_WIDTH) {
@@ -167,6 +168,6 @@ function getPhoto(nome) {
 		case "Belmy":
 			return mattePhoto;
 		default:
-			return simoPhoto;
+			return GAPhoto;
 	}
 }
