@@ -3,10 +3,22 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-const clarkePhoto = "/images/clarke.jpeg";
+const clarkePhoto = "/images/clarke.jpg";
 const simoPhoto = "/images/simo.jpeg";
 const duduPhoto = "/images/dudu.jpeg";
+const gaiaPhoto = "/images/gaia.jpg";
 const jacopoPhoto = "/images/jacopo.jpeg";
+const ludonaPhoto = "/images/ludona.png";
+const claraPhoto = "/images/clara.jpeg";
+const luisaPhoto = "/images/luisa.jpg";
+const michelePhoto = "/images/michele.jpg";
+const pierPhoto = "/images/pier.jpeg";
+const sdgPhoto = "/images/sdg.jpg";
+const serenaPhoto = "/images/serena.jpg";
+const sofiaPhoto = "/images/sofia.jpg";
+const alessioPhoto = "/images/alessio.jpg";
+const mattePhoto = "/images/matte.jpg";
+const valeriaPhoto = "/images/valeria.jpg";
 
 export default function SelectionPage({ nomi }) {
 	return (
@@ -62,7 +74,10 @@ export default function SelectionPage({ nomi }) {
 							<img
 								className="profile-image"
 								src={getPhoto(nome)}
-								style={{ maxWidth: "50px", maxHeight: "60px" }}
+								style={{
+									maxWidth: "40px",
+									clipPath: "circle(50% at 50% 50%)",
+								}}
 							></img>
 							<p
 								style={{
@@ -81,7 +96,6 @@ export default function SelectionPage({ nomi }) {
 }
 
 function getPhoto(nome) {
-	console.log(nome);
 	switch (nome) {
 		case "Simo":
 			return simoPhoto;
@@ -91,6 +105,28 @@ function getPhoto(nome) {
 			return duduPhoto;
 		case "Jacopo":
 			return jacopoPhoto;
+		case "Clara":
+			return claraPhoto;
+		case "Gaia":
+			return gaiaPhoto;
+		case "Ludona":
+			return ludonaPhoto;
+		case "Luisa":
+			return luisaPhoto;
+		case "Michele":
+			return michelePhoto;
+		case "Pier":
+			return pierPhoto;
+		case "SdG":
+			return sdgPhoto;
+		case "Sere":
+			return serenaPhoto;
+		case "Sofia":
+			return sofiaPhoto;
+		case "Valeria":
+			return valeriaPhoto;
+		case "Belmy":
+			return mattePhoto;
 		default:
 			return simoPhoto;
 	}

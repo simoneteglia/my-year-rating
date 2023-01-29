@@ -4,6 +4,11 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import global from "../global.json";
 
+const clarkePhoto = "/images/clarke.jpeg";
+const simoPhoto = "/images/simo.jpeg";
+const duduPhoto = "/images/dudu.jpeg";
+const jacopoPhoto = "/images/jacopo.jpeg";
+
 export default function Navbar({ windowSize, nomi }) {
 	if (windowSize > global.UTILS.MOBILE_WIDTH) {
 		/*
@@ -21,7 +26,7 @@ export default function Navbar({ windowSize, nomi }) {
 					left: 0,
 				}}
 			>
-				<h1 style={{ paddingLeft: "20px" }}>M Y R</h1>
+				<h1 style={{ paddingLeft: "20px" }}>My Year Rating</h1>
 				<section
 					style={{
 						height: "700px",
@@ -39,7 +44,14 @@ export default function Navbar({ windowSize, nomi }) {
 									paddingLeft: "20px",
 								}}
 							>
-								<FontAwesomeIcon icon={faUser} />
+								<img
+									className="profile-image"
+									src={getPhoto(nome)}
+									style={{
+										maxWidth: "50px",
+										maxHeight: "40px",
+									}}
+								></img>
 								<Link
 									style={{
 										textDecoration: "none",
@@ -107,5 +119,20 @@ export default function Navbar({ windowSize, nomi }) {
 				</Link>
 			</div>
 		);
+	}
+}
+
+function getPhoto(nome) {
+	switch (nome) {
+		case "Simo":
+			return simoPhoto;
+		case "Clarke":
+			return clarkePhoto;
+		case "Dudu":
+			return duduPhoto;
+		case "Jacopo":
+			return jacopoPhoto;
+		default:
+			return simoPhoto;
 	}
 }
