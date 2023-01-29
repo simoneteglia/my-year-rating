@@ -205,6 +205,27 @@ export default class Data {
 	 */
 
 	getBarDataSingle(persona) {
+		if (persona === "Insalata") {
+			return {
+				labels: [2021, 2022],
+				datasets: [
+					{
+						label: "Voto",
+						borderWidth: borderWidth,
+						data: [10, 1],
+						backgroundColor: [
+							"rgba(255, 99, 132, 0.6)",
+							"rgba(54, 162, 235, 0.6)",
+						],
+						borderColor: [
+							"rgba(255, 99, 132, 1)",
+							"rgba(54, 162, 235, 1)",
+						],
+					},
+				],
+			};
+		}
+
 		let myDatasets = [];
 		let votiPersona = [];
 		for (const pers in voti) {

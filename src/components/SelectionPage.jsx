@@ -22,6 +22,7 @@ const alessioPhoto = "/images/alessio.jpg";
 const mattePhoto = "/images/matte.jpg";
 const valeriaPhoto = "/images/valeria.jpg";
 const GAPhoto = "/images/GA.jpeg";
+const saladPhoto = "/images/insalata.jpg";
 
 export default function SelectionPage({ nomi, windowSize }) {
 	useEffect(() => {
@@ -67,7 +68,7 @@ export default function SelectionPage({ nomi, windowSize }) {
 					paddingTop: "30px",
 				}}
 			>
-				{[...nomi].map((nome, i) => {
+				{[...nomi, "Insalata"].map((nome, i) => {
 					return (
 						<Link
 							to={`/${nome}`}
@@ -136,6 +137,8 @@ function getPhoto(nome) {
 			return valeriaPhoto;
 		case "Belmy":
 			return mattePhoto;
+		case "Insalata":
+			return saladPhoto;
 		default:
 			return GAPhoto;
 	}

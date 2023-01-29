@@ -21,6 +21,7 @@ const alessioPhoto = "/images/alessio.jpg";
 const mattePhoto = "/images/matte.jpg";
 const valeriaPhoto = "/images/valeria.jpg";
 const GAPhoto = "/images/GA.jpeg";
+const saladPhoto = "/images/insalata.jpg";
 
 export default function Navbar({ windowSize, nomi }) {
 	if (windowSize > global.UTILS.MOBILE_WIDTH) {
@@ -46,7 +47,7 @@ export default function Navbar({ windowSize, nomi }) {
 						height: "700px",
 					}}
 				>
-					{["GA", ...nomi].map((nome, i) => {
+					{["GA", ...nomi, "Insalata"].map((nome, i) => {
 						return (
 							<div
 								key={i}
@@ -168,6 +169,8 @@ function getPhoto(nome) {
 			return valeriaPhoto;
 		case "Belmy":
 			return mattePhoto;
+		case "Insalata":
+			return saladPhoto;
 		default:
 			return GAPhoto;
 	}

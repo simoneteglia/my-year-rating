@@ -20,6 +20,7 @@ const alessioPhoto = "/images/alessio.jpg";
 const mattePhoto = "/images/matte.jpg";
 const valeriaPhoto = "/images/valeria.jpg";
 const GAPhoto = "/images/GA.jpeg";
+const saladPhoto = "/images/insalata.jpg";
 
 export default function PlotsSingle({ data, windowSize }) {
 	const { persona } = useParams();
@@ -123,6 +124,8 @@ function getPhoto(nome) {
 			return valeriaPhoto;
 		case "Belmy":
 			return mattePhoto;
+		case "Insalata":
+			return saladPhoto;
 		default:
 			return GAPhoto;
 	}
