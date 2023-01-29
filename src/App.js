@@ -86,7 +86,12 @@ export default function App() {
 				},
 				{
 					path: "/selection",
-					element: <SelectionPage nomi={data.getNomi()} />,
+					element: (
+						<SelectionPage
+							nomi={data.getNomi()}
+							windowSize={windowSize}
+						/>
+					),
 				},
 			],
 		},

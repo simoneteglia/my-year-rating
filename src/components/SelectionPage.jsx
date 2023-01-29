@@ -3,6 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
+import global from "../global.json";
+
 const clarkePhoto = "/images/clarke.jpg";
 const simoPhoto = "/images/simo.jpeg";
 const duduPhoto = "/images/dudu.jpeg";
@@ -21,7 +23,13 @@ const mattePhoto = "/images/matte.jpg";
 const valeriaPhoto = "/images/valeria.jpg";
 const GAPhoto = "/images/GA.jpeg";
 
-export default function SelectionPage({ nomi }) {
+export default function SelectionPage({ nomi, windowSize }) {
+	useEffect(() => {
+		if (windowSize > global.UTILS.MOBILE_WIDTH) {
+			window.location.href = "/";
+		}
+	}, [windowSize]);
+
 	return (
 		<div
 			style={{
