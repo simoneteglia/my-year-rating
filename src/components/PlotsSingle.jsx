@@ -30,6 +30,26 @@ export default function PlotsSingle({ data, windowSize }) {
 			/**
 			 * DESKTOP
 			 */
+			if (persona === "alessio") {
+				return (
+					<div
+						style={{
+							width: "70%",
+							marginLeft: "25%",
+							textAlign: "center",
+						}}
+					>
+						<h1 style={{ fontSize: "100px" }}>
+							Sei stato alessiato
+						</h1>
+						<img
+							id="alessio"
+							src="/images/alessio.jpg"
+							width="300px"
+						/>
+					</div>
+				);
+			}
 			return (
 				<div style={{ width: "70%", marginLeft: "25%" }}>
 					<h1>Gli anni di {persona}</h1>
@@ -50,6 +70,26 @@ export default function PlotsSingle({ data, windowSize }) {
 			/**
 			 * MOBILE
 			 */
+			if (persona === "alessio") {
+				return (
+					<div
+						style={{
+							width: "95%",
+							margin: "auto",
+							textAlign: "center",
+						}}
+					>
+						<h1 style={{ fontSize: "50px" }}>
+							Sei stato alessiato
+						</h1>
+						<img
+							id="alessio"
+							src="/images/alessio.jpg"
+							width="300px"
+						/>
+					</div>
+				);
+			}
 			return (
 				<div
 					style={{
