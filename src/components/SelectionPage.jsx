@@ -65,7 +65,7 @@ export default function SelectionPage({ nomi, windowSize }) {
 					placeItems: "center",
 					width: "90%",
 					height: "100%",
-					paddingTop: "30px",
+					paddingTop: "20px",
 				}}
 			>
 				{[...nomi, "Insalata"].map((nome, i) => {
