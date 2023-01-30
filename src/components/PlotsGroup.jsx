@@ -25,6 +25,7 @@ export default function PlotsGroup({ windowSize, data }) {
 					gap: "50px",
 					paddingBottom: "100px",
 					marginTop: "40px",
+					overflowX: "hidden",
 				}}
 			>
 				<Radar
@@ -95,6 +96,7 @@ export default function PlotsGroup({ windowSize, data }) {
 					flexDirection: "column",
 					gap: "50px",
 					paddingBottom: "100px",
+					overflowX: "hidden",
 				}}
 			>
 				<h1 style={{ marginBottom: "-20px", textAlign: "center" }}>
