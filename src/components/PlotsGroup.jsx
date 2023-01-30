@@ -135,6 +135,21 @@ export default function PlotsGroup({ windowSize, data }) {
 						},
 					}}
 				/>
+				<div
+					id="sei-stato-alessiato"
+					style={{
+						width: "100%",
+						display: "flex",
+						justifyContent: "flex-end",
+					}}
+				>
+					<p
+						onClick={() => (window.location.href = "/alessio")}
+						id="patata"
+					>
+						🥔
+					</p>
+				</div>
 			</section>
 		);
 	}

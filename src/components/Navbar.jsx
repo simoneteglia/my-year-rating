@@ -101,6 +101,7 @@ export default function Navbar({ windowSize, nomi }) {
 					gridTemplateColumns: "50% 50%",
 					borderTop: `2px solid ${global.COLORS.NAVBAR_COLOR}`,
 					transition: "all 0.3s ease",
+					zIndex: 100,
 				}}
 			>
 				<Link
